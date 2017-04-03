@@ -15,9 +15,11 @@ class MoviewController: UIViewController ,UITableViewDelegate, UITableViewDataSo
 
     @IBOutlet weak var tableView: UITableView!
     var movies: [Movie] = []
+    var endPoint: FetchType?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Movies"
         //tablview setup
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -31,7 +33,7 @@ class MoviewController: UIViewController ,UITableViewDelegate, UITableViewDataSo
     }
     
     func loadMovies() {
-        Movie.loadMovies(queryCategory: FetchType.nowPlaying, success: { [weak self](movies) in
+        Movie.loadMovies(queryCategory: endPoint!, success: { [weak self](movies) in
             self?.movies = movies
             self?.tableView.refreshControl?.endRefreshing()
             self?.tableView.reloadData()
