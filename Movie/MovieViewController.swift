@@ -40,8 +40,13 @@ class MoviewController: UIViewController ,UITableViewDelegate, UITableViewDataSo
             self?.tableView.refreshControl?.endRefreshing()
             self?.tableView.reloadData()
             MBProgressHUD.hide(for:(self?.view)!, animated: true)
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            appDelegate.netWorkerroView?.isHidden = true
+
         }) { [weak self] (error) in
             self?.tableView.refreshControl?.endRefreshing()
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            appDelegate.netWorkerroView?.isHidden = false
             MBProgressHUD.hide(for:(self?.view)!, animated: true)
         }
     }

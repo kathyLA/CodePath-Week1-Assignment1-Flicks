@@ -49,7 +49,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.netWorkerroView?.isHidden = true
         
         
-        //detack network connection
+        //when lost network connection, show the network error
         AFNetworkReachabilityManager.shared().startMonitoring()
         AFNetworkReachabilityManager.shared().setReachabilityStatusChange { (status) in
             switch (status) {
