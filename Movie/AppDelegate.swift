@@ -7,10 +7,10 @@
 //
 
 import UIKit
-
+import AFNetworking
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    var netWorkerroView: NetWorkErrorView?
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -33,10 +33,39 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         topRatedNavigationController.tabBarItem.title = "Top Rated"
 
         let tabBarController = UITabBarController()
+        
         tabBarController.viewControllers = [nowPlayingNavigationController, topRatedNavigationController]
+        
+        let height = (UIApplication.shared.statusBarFrame.height +
+            topRatedNavigationController.navigationBar.frame.height)
+        
+        netWorkerroView = NetWorkErrorView(frame: CGRect(x: 0, y: height, width: UIScreen.main.bounds.width, height: 30))
+        netWorkerroView?.backgroundColor = .black
+        tabBarController.view.addSubview(netWorkerroView!)
         
         window?.rootViewController = tabBarController
         window?.makeKeyAndVisible()
+        self.netWorkerroView?.isHidden = true
+        
+        
+        //detack network connection
+        AFNetworkReachabilityManager.shared().startMonitoring()
+        AFNetworkReachabilityManager.shared().setReachabilityStatusChange { (status) in
+            switch (status) {
+                case .reachableViaWiFi: fallthrough
+                case .reachableViaWWAN:
+                    self.netWorkerroView?.isHidden = true
+                case .notReachable: fallthrough
+                default :
+                    self.netWorkerroView?.isHidden = false
+            }
+        }
+        
+        
+        
+        
+        
+        
         return true
     }
 

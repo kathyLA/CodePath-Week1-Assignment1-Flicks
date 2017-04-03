@@ -8,7 +8,7 @@
 
 import UIKit
 import AFNetworking
-
+import MBProgressHUD
 
 
 class MoviewController: UIViewController ,UITableViewDelegate, UITableViewDataSource {
@@ -33,12 +33,16 @@ class MoviewController: UIViewController ,UITableViewDelegate, UITableViewDataSo
     }
     
     func loadMovies() {
+        MBProgressHUD.showAdded(to: self.view, animated: true)
+       
         Movie.loadMovies(queryCategory: endPoint!, success: { [weak self](movies) in
             self?.movies = movies
             self?.tableView.refreshControl?.endRefreshing()
             self?.tableView.reloadData()
+            MBProgressHUD.hide(for:(self?.view)!, animated: true)
         }) { [weak self] (error) in
             self?.tableView.refreshControl?.endRefreshing()
+            MBProgressHUD.hide(for:(self?.view)!, animated: true)
         }
     }
     

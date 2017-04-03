@@ -16,6 +16,8 @@
 		1E3C3FB81E91181F00287E79 /* MovieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3C3FB71E91181F00287E79 /* MovieUITests.swift */; };
 		1E3C3FC81E91599400287E79 /* MoveCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3C3FC71E91599400287E79 /* MoveCell.swift */; };
 		1E3C3FCA1E915F5400287E79 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3C3FC91E915F5400287E79 /* MovieDetailViewController.swift */; };
+		1E889B591E91FDD300C0FCFD /* NetWorkErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E889B581E91FDD300C0FCFD /* NetWorkErrorView.xib */; };
+		1E889B5B1E92011200C0FCFD /* NetWorkErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E889B5A1E92011200C0FCFD /* NetWorkErrorView.swift */; };
 		1EF0A8391E91A473001D9A84 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF0A8381E91A473001D9A84 /* Movie.swift */; };
 		6566386B2442B94BF0EFC586 /* Pods_Movie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C870434F24C0C57D4FA92B3 /* Pods_Movie.framework */; };
 /* End PBXBuildFile section */
@@ -55,6 +57,8 @@
 		1E3C3FB91E91181F00287E79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1E3C3FC71E91599400287E79 /* MoveCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoveCell.swift; sourceTree = "<group>"; };
 		1E3C3FC91E915F5400287E79 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
+		1E889B581E91FDD300C0FCFD /* NetWorkErrorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NetWorkErrorView.xib; sourceTree = "<group>"; };
+		1E889B5A1E92011200C0FCFD /* NetWorkErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetWorkErrorView.swift; sourceTree = "<group>"; };
 		1EF0A8381E91A473001D9A84 /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		3E76A8E4B42476EF2ACC5892 /* Pods-Movie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Movie.release.xcconfig"; path = "Pods/Target Support Files/Pods-Movie/Pods-Movie.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -153,6 +157,8 @@
 			isa = PBXGroup;
 			children = (
 				1E3C3FC71E91599400287E79 /* MoveCell.swift */,
+				1E889B581E91FDD300C0FCFD /* NetWorkErrorView.xib */,
+				1E889B5A1E92011200C0FCFD /* NetWorkErrorView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -295,6 +301,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E889B591E91FDD300C0FCFD /* NetWorkErrorView.xib in Resources */,
 				1E3C3FA21E91181F00287E79 /* LaunchScreen.storyboard in Resources */,
 				1E3C3F9F1E91181F00287E79 /* Assets.xcassets in Resources */,
 				1E3C3F9D1E91181F00287E79 /* Main.storyboard in Resources */,
@@ -370,6 +377,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E889B5B1E92011200C0FCFD /* NetWorkErrorView.swift in Sources */,
 				1E3C3FCA1E915F5400287E79 /* MovieDetailViewController.swift in Sources */,
 				1E3C3F9A1E91181F00287E79 /* MovieViewController.swift in Sources */,
 				1E3C3FC81E91599400287E79 /* MoveCell.swift in Sources */,
