@@ -40,9 +40,22 @@ class MoviewController: UIViewController ,UITableViewDelegate, UITableViewDataSo
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "movie.loadDetail" {
+            
+            let movieDetailViewController = segue.destination as! MovieDetailViewController
+            let indexPath = self.tableView.indexPath(for: sender as! UITableViewCell)
+            movieDetailViewController.movie = movies[(indexPath?.row)!]
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
