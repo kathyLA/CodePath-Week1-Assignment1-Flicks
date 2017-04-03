@@ -22,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let nowPlayingViewController = nowPlayingNavigationController.topViewController as! MoviewController
         nowPlayingViewController.endPoint = .nowPlaying
         nowPlayingNavigationController.tabBarItem.title = "Now Playing"
+        
         nowPlayingNavigationController.tabBarItem.image = UIImage(named: "ic_movie")
         
         
@@ -33,7 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         topRatedNavigationController.tabBarItem.title = "Top Rated"
 
         let tabBarController = UITabBarController()
-        
+    
         tabBarController.viewControllers = [nowPlayingNavigationController, topRatedNavigationController]
         
         let height = (UIApplication.shared.statusBarFrame.height +
@@ -60,11 +61,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     self.netWorkerroView?.isHidden = false
             }
         }
-        
-        
-        
-        
-        
         
         return true
     }
